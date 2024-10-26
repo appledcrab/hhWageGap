@@ -1,0 +1,175 @@
+@font-face {
+    font-family: outfitFont;
+    src: url(./assets/outfit.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: outfitFont;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #258055;
+    color: #fff;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+
+}
+
+.navbar a:hover{
+    /* scale:1.1; */
+    border-bottom: 5px solid #fff ;
+}
+
+.navbar .user-profile {
+    font-size: 1em;
+}
+
+.navbar .username {
+    font-weight: bold;
+}
+
+
+main {
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.company-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.company-card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.company-card p {
+    margin: 5px 0;
+}
+
+.certified {
+    color: green;
+    font-weight: bold;
+}
+
+.not-certified {
+    color: red;
+    font-weight: bold;
+}
+
+.review-btn {
+    background-color: #559e25;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.review-btn:hover {
+    background-color: #207c2f;
+}
+
+
+
+/* specific to those, can change */
+#financial-literacy ul, #negotiation-tips ul {
+    list-style-type: none;
+}
+
+#financial-literacy ul li, #negotiation-tips ul li {
+    margin: 8px 0;
+}
+
+#financial-literacy ul li a, #negotiation-tips ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#financial-literacy ul li a:hover, #negotiation-tips ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* company view specific styles */
+.wage-gap-overview .overview-card,
+.improvement-suggestions .suggestion-card,
+.progress-summary .summary-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.overview-card h3,
+.suggestion-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #258055;
+}
+
+.overview-card p,
+.suggestion-card p,
+.summary-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.target-gap {
+    color: #258055;
+    font-weight: bold;
+}
+
+.current-gap {
+    color: #b00;
+    font-weight: bold;
+}
