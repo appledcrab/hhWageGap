@@ -12,7 +12,7 @@ const CompanySchema = mongoose.Schema(
         },
         industry:{
             type:String,
-            enum:["Business","Resturants","Information Technology","Insurance","Health Care","Education","Computer Hardware Development","Accounting","Internet and Web Services"]
+            enum:["Business","Resturants","Information Technology","Insurance","Health Care","Education","Computer Hardware Development","Accounting","Internet and Web Services","Other"]
         },
         description:{
             type:String

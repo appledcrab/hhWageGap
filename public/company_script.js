@@ -6,17 +6,18 @@ async function fetchCompanies(industry = '', minRating = '') {
     renderCompanies(companies);
 }
 
-// Function to render companies to the HTML
+
+
 function renderCompanies(companies) {
     const companyList = document.querySelector('.company-list');
-    companyList.innerHTML = ''; // Clear existing content
+    companyList.innerHTML = ''; 
 
     companies.forEach(company => {
         const companyCard = document.createElement('div');
         companyCard.classList.add('company-card');
         companyCard.innerHTML = `
             <h3>${company.name}</h3>
-            <p><strong>Certification</strong>: <span class="${company.wg_certified ? 'certified' : 'not-certified'}">
+            <p class="comp-certs"><strong>Equal Pay</strong>: <span class="${company.wg_certified ? 'certified' : 'not-certified'}">
                 ${company.wg_certified ? 'Certified' : 'Not Certified'}</span></p>
             <p><strong>Industry</strong>: ${company.industry}</p>
             <p><strong>Description</strong>: ${company.description}</p>
@@ -24,13 +25,22 @@ function renderCompanies(companies) {
             <p>Reviews: ${company.reviews}</p>
             <button class="review-btn">Write a Review</button>
         `;
+
+        companyCard.addEventListener('click', () => {
+            console.log("Clicked on companyCard")
+            window.location.href = `./company_detail.html?id=${company._id}`;
+        });
+
         companyList.appendChild(companyCard);
     });
 }
 
+
 // gettings all companies on load
 fetchCompanies();
 
+
+// filters oncec button is clicked / form is "submitted" 
 document.getElementById('filter-form').addEventListener('submit', event => {
     event.preventDefault();
 

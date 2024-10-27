@@ -53,13 +53,36 @@ app.post('/api/companies', async (req,res)=>{
   // res.send(req.body);
 });
 
+// app.put to update- didnt get to it yet
+app.get('/api/companies/:id', async (req, res) => {
+  const companyId = req.params.id;
+
+  try {
+    const company = await Company.findById(companyId);
+
+    if (!company) {
+      return res.status(404).json({ message: 'Company not found' });
+    }
+
+    res.json(company);
+  } catch (error) {
+    // Handle any errors that occur during the database query
+    console.error('Error fetching company:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+mongoose.set('debug', true);
 
 // mongodb connection
 mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@hhwagegap.9apkj.mongodb.net/Node-API?retryWrites=true&w=majority&appName=hhwageGap`)
-  .then(() => {console.log('Connected mongoDB');
-    app.listen(3000, () =>{
-        console.log("Mongoose connection +server is running on port 3000")
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(3000, () => {
+      console.log("Mongoose connection + server is running on port 3000");
     });
-  }
-)
-  .catch(() => console.log("conn failed"))
+  })
+  .catch((err) => {
+    console.error("Connection failed", err);
+    console.error('Error stack:', err.stack);
+  });
